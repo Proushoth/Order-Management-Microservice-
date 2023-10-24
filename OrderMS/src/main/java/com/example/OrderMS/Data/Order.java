@@ -8,12 +8,12 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
+    private int orderId;
 
     @Column(name = "user_Id")
-    private Long userId;
+    private int userId;
 
-    @Column(name = "order_date")
+    @Column(name = "order_Date")
     private LocalDateTime orderDate;
 
     @Column(name = "status")
@@ -30,12 +30,12 @@ public class Order {
     @Column(name = "shipping_City")
     private String shippingCity;
 
-    @Column(name = "shipping_PostalCode")
+    @Column(name = "shipping_Postal_Code")
     private String shippingPostalCode;
 
     // Electronic Item Details
     @Column(name = "product_Id")
-    private Long productId;
+    private int productId;
 
     @Column(name = "product_Name")
     private String productName;
@@ -60,27 +60,27 @@ public class Order {
     private String transactionId;
 
     // Additional Information
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "notes")
     private String notes;
 
     @Column(name = "id")
-    private long id;
-    @Column(name = "customer_contact")
+    private int id;
+    @Column(name = "customer_Contact")
     private String customerContact;
 
-    public Long getOrderId() {
+    public int getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
 
-    public Long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -132,11 +132,11 @@ public class Order {
         this.shippingPostalCode = shippingPostalCode;
     }
 
-    public Long getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
@@ -204,11 +204,11 @@ public class Order {
         this.notes = notes;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

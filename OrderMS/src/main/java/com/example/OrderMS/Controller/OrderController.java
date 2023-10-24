@@ -16,13 +16,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping("")
+    @PostMapping("/orders")
     public Order placeOrder(@RequestBody Order order) {
         return orderService.placeOrder(order);
     }
 
     @GetMapping("/{orderId}")
-    public Order getOrder(@PathVariable Long orderId) {
+    public Order getOrder(@PathVariable int orderId) {
         return orderService.getOrder(orderId);
     }
 
@@ -32,12 +32,12 @@ public class OrderController {
     }
 
     @PutMapping("/{orderId}")
-    public Order updateOrderStatus(@PathVariable Long orderId, @RequestParam String newStatus) {
+    public Order updateOrderStatus(@PathVariable int orderId, @RequestParam String newStatus) {
         return orderService.updateOrderStatus(orderId, newStatus);
     }
 
     @DeleteMapping("/{orderId}")
-    public void deleteOrder(@PathVariable Long orderId) {
+    public void deleteOrder(@PathVariable int orderId) {
         orderService.deleteOrder(orderId);
     }
 }

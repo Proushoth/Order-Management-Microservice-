@@ -31,7 +31,7 @@ public class OrderService {
         return savedOrder;
     }
 
-    public Order getOrder(Long orderId) {
+    public Order getOrder(int orderId) {
         return orderRepository.findById(orderId)
                 .orElseThrow(() -> new OrderNotFoundException("Order not found with id: " + orderId));
     }
@@ -40,13 +40,13 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order updateOrderStatus(Long orderId, String newStatus) {
+    public Order updateOrderStatus(int orderId, String newStatus) {
         Order order = getOrder(orderId);
         order.setStatus(newStatus);
         return orderRepository.save(order);
     }
 
-    public void deleteOrder(Long orderId) {
+    public void deleteOrder(int orderId) {
         Order order = getOrder(orderId);
         orderRepository.delete(order);
     }
